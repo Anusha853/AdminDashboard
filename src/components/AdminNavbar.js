@@ -14,11 +14,11 @@ const AdminNavbar = ({ onTabChange, activeTab }) => {
           onClick={() => onTabChange('customer')}>
           Customer details
         </button>
-        <button 
+        {/* <button 
           className={activeTab === 'verification' ? 'active' : ''}
           onClick={() => onTabChange('verification')}>
           Document Verification Log
-        </button>
+        </button> */}
       </div>
       <div className="admin-greeting">
         <span>Hello, admin</span>

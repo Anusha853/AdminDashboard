@@ -184,8 +184,10 @@ const AdminDashboard = ({ activeTab }) => {
                   <td>
                   {customer.planNames.length > 0 ? (
                       customer.planNames.map((planName, i) => (
-                        <div key={i} style={{ display: 'flex', alignItems: 'center' }}>
-                          <span style={{ marginRight: '10px', marginBottom:'5px' }}>{planName}</span>
+                        // <div key={i} style={{ display: 'flex', alignItems: 'center' }}>
+                        <div key={i} className='plan-container'>
+                          {/* <span style={{ marginRight: '10px', marginBottom:'5px' }}>{planName}</span> */}
+                          <span className='plan-name'>{planName}</span>
                           <label className="switch">
                             <input
                               type="checkbox"
@@ -198,7 +200,12 @@ const AdminDashboard = ({ activeTab }) => {
                         </div>
                       ))
                     ) : (
-                      <span>-</span>
+                      
+                      customer.documentStatus === 'Verified' ? (
+                        <span>No plans yet</span>
+                      ) : (
+                        <span>Not applicable</span>
+                      )
                     )}
                   </td>
                   <td>{customer.documentStatus}</td>

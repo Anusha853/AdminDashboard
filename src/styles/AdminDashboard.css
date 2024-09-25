@@ -10,6 +10,9 @@ html, body {
     background-color: #edd2b9;
     height: 100vh;
   }
+
+
+
   
   /* Button Group Styles */
   .button-group {
@@ -41,6 +44,7 @@ html, body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
 }
   
   .filters select {
@@ -49,9 +53,12 @@ html, body {
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 16px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   }
   
-  /* Table Styles */
+  .filters select option{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
   table {
     width: 100%;
     border-collapse: collapse;
@@ -61,11 +68,14 @@ html, body {
     border: 1px solid #dee2e6; /* Light gray border */
     padding: 8px;
     text-align: left;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; /* Change the font family */
+    font-size: 14px; /* Change the font size */
   }
   
   table th {
     background-color: #f8f9fa; /* Light gray background */
     color: #343a40; /* Darker text color */
+    font-size: 16px;
   }
   
   table tr:nth-child(even) {
@@ -75,7 +85,7 @@ html, body {
   table tr:hover {
     background-color: #e9ecef; /* Light gray background on hover */
   }
-  
+
   /* Deactivate Button Styles */
   button.deactivate {
     padding: 5px 10px;
@@ -91,6 +101,19 @@ html, body {
     background-color: #c82333; /* Darker shade for hover */
   }
 
+  .plan-container {
+    display: flex;
+    justify-content: space-between; /* Ensures the plan name stays on the left and the switch is aligned to the right */
+    width: 100%;
+  }
+  
+
+  .plan-name {
+    flex-grow: 1; /* Ensures the plan name takes up the remaining space */
+    margin-bottom: 5px;
+  }
+  
+  
 
   /* Toggle Switch */
 .switch {
@@ -98,6 +121,8 @@ html, body {
     display: inline-block;
     width: 40px;
     height: 20px;
+    margin-left: auto;
+    margin-bottom: 5px;
   }
   
   .switch input {
@@ -146,6 +171,7 @@ html, body {
     border: none;
     border-radius: 8px;
     cursor: pointer;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     
 }
    
