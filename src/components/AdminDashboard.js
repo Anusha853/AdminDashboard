@@ -27,7 +27,8 @@ const AdminDashboard = ({ activeTab }) => {
 
   const fetchAllCustomers = async () => {
     try {
-      const response = await fetch('http://localhost:7777/admin/users'); // Your API endpoint for fetching all users
+      const apiUrl = process.env.REACT_APP_BASE_URL;
+      const response = await fetch(`${apiUrl}/admin/users`); // Your API endpoint for fetching all users
       const data = await response.json();
       console.log(data);
       setCustomers(data);
@@ -38,7 +39,8 @@ const AdminDashboard = ({ activeTab }) => {
 
   const fetchCustomersByType = async (customerType) => {
     try {
-      const response = await fetch(`http://localhost:7777/admin/users/filter?customerType=${customerType}`);
+      const apiUrl = process.env.REACT_APP_BASE_URL;
+      const response = await fetch(`${apiUrl}/admin/users/filter?customerType=${customerType}`);
       const data1 = await response.json();
       console.log("Filtered data:" ,data1);
       setCustomers(data1);
@@ -51,7 +53,8 @@ const AdminDashboard = ({ activeTab }) => {
 
   const fetchCustomersByDocumentStatus = async (isVerified) => {
     try {
-      const response = await fetch(`http://localhost:7777/admin/users/document-status?isVerified=${isVerified}`);
+      const apiUrl = process.env.REACT_APP_BASE_URL;
+      const response = await fetch(`${apiUrl}/admin/users/document-status?isVerified=${isVerified}`);
       const data = await response.json();
       setCustomers(data);
     } catch (error) {
@@ -90,7 +93,8 @@ const AdminDashboard = ({ activeTab }) => {
 
   const togglePlanActivation = async (userId, planId) => {
     try {
-      const response = await fetch(`http://localhost:7777/admin/users/plan/activation?userId=${userId}&planId=${planId}`, {
+      const apiUrl = process.env.REACT_APP_BASE_URL;
+      const response = await fetch(`${apiUrl}/admin/users/plan/activation?userId=${userId}&planId=${planId}`, {
         method: 'POST'
       });
 
@@ -115,7 +119,7 @@ const AdminDashboard = ({ activeTab }) => {
   };
 
   const handleLogout=()=>{
-    window.location.href = 'http://localhost:3000';
+    window.location.href = process.env.REACT_APP_FRONTEND_URL;
   }
 
   const filteredCustomers = customers
